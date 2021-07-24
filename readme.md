@@ -15,7 +15,6 @@
     conda install -c anaconda pandas
     conda install -c anaconda ipywidgets
     conda install -c conda-forge matplotlib
-    conda install -c conda-forge matplotlib
     conda install -c conda-forge k3d
     conda install -c conda-forge pythonocc-core
-    conda install -c conda-forge lark-parser
+    conda install -c conda-forge lark-parsers
