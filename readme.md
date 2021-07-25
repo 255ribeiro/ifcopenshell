@@ -26,7 +26,7 @@
 
     conda env export > environment.yml
     conda list -e > requirements.txt
-
+s
 ### instalando ambientes conda
 
     conda create --name pyifc --file requirements.txt

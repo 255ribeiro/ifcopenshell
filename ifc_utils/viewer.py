@@ -23,11 +23,13 @@ class Viewer:
         import k3d
 
         for product in self.file.by_type('IfcProduct'):
+            
             if product.is_a('IfcOpeningElement') or product.is_a('IfcSpace'): continue
             if product.Representation :  
+
                 # Change color of selected elements   
                 if product in self.elements:
-                    opacidade = 1.0
+                    opacidade = .8
                     cor = 0xdd2779
                 else:
                     opacidade = 0.15
@@ -35,6 +37,7 @@ class Viewer:
                 # Create shape
                 shape = ifcopenshell.geom.create_shape(self.settings, product)
                 vertices = shape.geometry.verts
+                print("vertices", vertices)
                 faces = shape.geometry.faces
 
                 # Add meshes

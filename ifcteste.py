@@ -1,9 +1,19 @@
-import sys
-import ifcopenshell as ifc
-import pandas as pd
+import ifcopenshell
+from ifc_utils.viewer import Viewer
+from ifcopenshell.util.selector import Selector
 
+ifc_file = ifcopenshell.open("./modelos_ifc/SampleHouse.ifc")
 
-sys.path.append(r'C:\Users\ferra\AppData\Roaming\Blender Foundation\Blender\2.93\scripts\addons\blenderbim')
-import ifcopenshell as ifc
-f = ifc.open('202103162102_cira.ifc')
-print(f)
+print("Arquivo ifc carregado: ",ifc_file)
+
+selector = Selector()
+
+elements = selector.parse(ifc_file, ".IfcWall")
+
+print("Elementos selecionados: ",elements)
+
+tela = Viewer(ifc_file, elements)
+
+print("tela")
+
+tela.display()
