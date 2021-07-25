@@ -21,7 +21,7 @@ class Viewer:
         import ifcopenshell
         import ifcopenshell.geom
         import k3d
-
+        print("teste")
         for product in self.file.by_type('IfcProduct'):
             
             if product.is_a('IfcOpeningElement') or product.is_a('IfcSpace'): continue
@@ -44,6 +44,6 @@ class Viewer:
                 self.plot += k3d.mesh(vertices, faces, opacity=opacidade, color=cor)        
 
         # Render
-        self.plot.mode='Change'
-        self.plot.camera_mode='orbit'
+        #self.plot.mode='Change'
+        #self.plot.camera_mode='orbit'
         self.plot.display()
